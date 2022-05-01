@@ -1,0 +1,30 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "sass",
+    "scss",
+    "markdown",
+    "html",
+    "json",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "python"
+  ],
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.local/bin/black",
+  "prettier.singleQuote": false,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "javascript.suggestionActions.enabled": true,
+  "emmet.includeLanguages": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "css","sass",
+  ],
+  "codeLens.enable": false
+}
