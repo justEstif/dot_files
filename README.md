@@ -1,0 +1,1 @@
+git, doom emacs, nvim
