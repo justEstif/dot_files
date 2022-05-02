@@ -6,15 +6,14 @@
 (setq org-directory "~Documents/org/")
 
 ;; dark themes
-;; (setq doom-theme 'doom-nord
-;; (setq doom-theme 'doom-challenger-deep
-;; (setq doom-theme 'doom-homage-black
+(setq doom-theme 'doom-nord
+;; (setq doom-theme 'doom-spacegrey
 ;; light themes
-(setq doom-theme 'doom-gruvbox-light
 ;; (setq doom-theme 'doom-homage-white
-      doom-font (font-spec :family "Hack" :size 14 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Hack" :size 14 :weight 'regular))
-
+      doom-font (font-spec :family "Comic Code Ligatures" :size 13)
+      doom-variable-pitch-font (font-spec :family "Comic Code Ligatures" :size 14))
+      ;; doom-font (font-spec :family "Hack" :size 14 :weight 'regular)
+      ;; doom-variable-pitch-font (font-spec :family "Hack" :size 14 :weight 'regular))
 ;; line number like vim for jumping around
 (setq display-line-numbers-type 'relative)
 
