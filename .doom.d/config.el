@@ -6,10 +6,10 @@
 (setq org-directory "~Documents/org/")
 
 ;; dark themes
-(setq doom-theme 'doom-nord
-;; (setq doom-theme 'doom-spacegrey
+(setq doom-theme 'doom-vibrant
+;; (setq doom-theme 'doom-one
 ;; light themes
-;; (setq doom-theme 'doom-homage-white
+;; (setq doom-theme 'doom-one-light
       doom-font (font-spec :family "Comic Code Ligatures" :size 13)
       doom-variable-pitch-font (font-spec :family "Comic Code Ligatures" :size 14))
       ;; doom-font (font-spec :family "Hack" :size 14 :weight 'regular)
