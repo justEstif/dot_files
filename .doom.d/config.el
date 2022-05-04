@@ -6,8 +6,9 @@
 (setq org-directory "~Documents/org/")
 
 ;; dark themes
-(setq doom-theme 'doom-vibrant
+;; (setq doom-theme 'doom-vibrant
 ;; (setq doom-theme 'doom-one
+(setq doom-theme 'doom-nord
 ;; light themes
 ;; (setq doom-theme 'doom-one-light
       doom-font (font-spec :family "Comic Code Ligatures" :size 13)
@@ -27,3 +28,6 @@
 
 ;; prettier
 (require 'prettier)
+;;
+(require 'elcord)
+(elcord-mode)

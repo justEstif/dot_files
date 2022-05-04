@@ -51,3 +51,5 @@
 
 ;; (package! package-name)
 ;; doom install -> in terminal
+
+(package! elcord)
