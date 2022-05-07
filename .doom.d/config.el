@@ -54,4 +54,4 @@
       [C-M-return] #'org-insert-subheading)
 
 ;; fix for scheduled todo not showing up in agenda
-  (setq org-agenda-start-day nil)
+(setq org-agenda-start-day nil)
