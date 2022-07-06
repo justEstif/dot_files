@@ -49,7 +49,25 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-;; (package! package-name)
-;; doom install -> in terminal
-
-(package! elcord)
+;; required for activity watch
+(package! request)
+(package! olivetti)
+;; keep track of time
+(package! activity-watch-mode)
+(package! wakatime-mode)
+(package! dired-hide-dotfiles)
+;; md -> org
+(package! org-pandoc-import
+  :recipe (:host github
+           :repo "tecosaur/org-pandoc-import"
+           :files ("*.el" "filters" "preprocessors")))
+;; org roam ui
+(unpin! org-roam)
+(package! websocket)
+(package! simple-httpd)
+(package! f)
+(package! org-roam-ui)
+;; stop dired from opening a bunch of buffers
+(package! dired-single)
+;; tailwind
+(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))

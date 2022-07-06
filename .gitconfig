@@ -2,9 +2,10 @@
 	name = justEstif
 	email = 95101485+justEstif@users.noreply.github.com
 [core]
-	editor = nvim
 	autocrlf = input
 	safecrlf = true
+	editor = nvim
+	excludesFile = /home/estifanos/.gitignore
 [alias]
   co = checkout
   ci = commit -m
@@ -13,3 +14,13 @@
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   type = cat-file -t
   dump = cat-file -p
+
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
