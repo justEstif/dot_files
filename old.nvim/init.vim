@@ -42,10 +42,8 @@ Plug 'preservim/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 " themes
-Plug 'gosukiwi/vim-atom-dark'
 call plug#end()
 " set theme
-colorscheme atom-dark
 
 syntax on
 set mouse=a
@@ -188,8 +186,8 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
 " scroll pop up with C-j/C-k
-inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
+inoremap <expr> <C-j><CR> ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> <C-k><CR> ((pumvisible())?("\<C-p>"):("k"))
 
 " jk == esc
 inoremap jk <Esc>
