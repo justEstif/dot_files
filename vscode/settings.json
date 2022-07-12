@@ -10,7 +10,7 @@
   // prettier
   "prettier.jsxBracketSameLine": true,
   "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -19,6 +19,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
@@ -41,7 +47,8 @@
   "vim.foldfix": true,
   "vim.startofline": false,
   "vim.leader": "<space>",
-  // "vim.smartcase": false,
+  "vim.smartcase": false,
+  "vim.ignorecase": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.camelCaseMotion.enable": true,
   "vim.visualModeKeyBindings": [
@@ -54,20 +61,16 @@
       "after": ["<", "g", "v"]
     },
     {
+      "before": ["<leader>", "g"],
+      "commands": ["workbench.action.gotoLine"]
+    },
+    {
       "before": ["<leader>", "p"],
       "commands": ["workbench.action.showCommands"]
     },
     {
       "before": ["<leader>", "t"],
       "commands": ["workbench.action.gotoSymbol"]
-    },
-    {
-      "before": ["J"],
-      "after": ["5", "j"]
-    },
-    {
-      "before": ["K"],
-      "after": ["5", "k"]
     },
     {
       "before": ["H"],
@@ -80,6 +83,18 @@
     {
       "before": ["Y"],
       "after": ["y", "$"]
+    },
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": ["J"],
+      "after": ["}"]
+    },
+    {
+      "before": ["K"],
+      "after": ["{"]
     }
   ],
 
@@ -114,6 +129,10 @@
       "commands": ["workbench.action.closeActiveEditor"]
     },
     {
+      "before": ["<leader>", "g"],
+      "commands": ["workbench.action.gotoLine"]
+    },
+    {
       "before": ["<leader>", "p"],
       "commands": ["workbench.action.showCommands"]
     },
@@ -131,11 +150,11 @@
     },
     {
       "before": ["J"],
-      "after": ["5", "j"]
+      "after": ["}"]
     },
     {
       "before": ["K"],
-      "after": ["5", "k"]
+      "after": ["{"]
     },
     {
       "before": ["H"],
@@ -209,7 +228,6 @@
   "workbench.editor.showTabs": false,
   "workbench.layoutControl.enabled": false,
   "editor.hover.enabled": false,
-  "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
 
   // cursor
@@ -251,14 +269,15 @@
   // fonts
   "scm.inputFontSize": 12,
   "editor.fontSize": 16,
-  "editor.fontFamily": "Liga Ubuntu Mono",
+  "editor.fontFamily": "UbuntuMono Nerd Font",
+
   "editor.lineHeight": 1,
   "editor.fontLigatures": true,
-  "editor.codeLensFontFamily": "Liga Ubuntu Mono",
+  "editor.codeLensFontFamily": "UbuntuMono Nerd Font ",
 
   // path intellisense
-  "typescript.suggest.paths": true,
-  "javascript.suggest.paths": true,
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false,
   "path-intellisense.extensionOnImport": true,
 
   // better comments
@@ -309,10 +328,6 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.lineHeight": 1,
-
-  // tabs, brackets, whitespace
-  "editor.renderWhitespace": "all",
-  "editor.guides.indentation": false,
   "editor.guides.bracketPairs": "active",
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
@@ -335,7 +350,7 @@
   "explorer.confirmDelete": false,
   "files.autoSave": "onWindowChange",
   "workbench.editor.enablePreview": false,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "One Dark Pro Darker",
 
   "files.exclude": {
     "**/.git": true,
@@ -363,5 +378,10 @@
     ".log/": true,
     "yarn.lock": true
   },
-  "diffEditor.renderSideBySide": false
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": true,
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
