@@ -93,6 +93,8 @@ return packer.startup(function(use)
         requires = {'kyazdani42/nvim-web-devicons'}
     }
 
+    -- My plugins
+
     -- Comments
     use {
         'numToStr/Comment.nvim',
@@ -138,14 +140,6 @@ return packer.startup(function(use)
         end
     })
 
-    -- spelling
-    use {
-        'lewis6991/spellsitter.nvim',
-        config = function()
-          require('spellsitter').setup()
-        end
-    }
-
     -- cursorline
     use {
         'yamatsum/nvim-cursorline',
@@ -155,6 +149,9 @@ return packer.startup(function(use)
               enable = true,
               timeout = 0,
               number = false,
+            },
+            cursorword = {
+              enable = false
             }
           }
         end
