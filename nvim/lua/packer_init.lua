@@ -137,7 +137,28 @@ return packer.startup(function(use)
             })
         end
     })
-    -- formatter
+
+    -- spelling
+    use {
+        'lewis6991/spellsitter.nvim',
+        config = function()
+          require('spellsitter').setup()
+        end
+    }
+
+    -- cursorline
+    use {
+        'yamatsum/nvim-cursorline',
+        config = function()
+          require('nvim-cursorline').setup {
+            cursorline = {
+              enable = true,
+              timeout = 0,
+              number = false,
+            }
+          }
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

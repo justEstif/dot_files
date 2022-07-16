@@ -70,4 +70,3 @@ autocmd('BufLeave', {
   command = 'stopinsert'
 })
 
--- Format file on save

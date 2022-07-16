@@ -104,3 +104,25 @@ map('n', '<left>', ':bn<CR>')
 -- Close current buffer
 map('n', '<leader>bk', ':Bdelete<CR>')
 
+-- Move lines with Alt j/k
+map("n", '<A-j>', ":m .+1<CR>==")
+map("n", '<A-k>', ":m .-2<CR>==")
+map("i", '<A-j>', "<Esc>:m .+1<CR>==gi" )
+map("i", '<A-k>', "<Esc>:m .-2<CR>==gi")
+map("v", '<A-j>', ":m '>+1<CR>gv=gv")
+map("v", '<A-k>', ":m '<-2<CR>gv=gv")
+
+
+-- Telescope
+-- nnoremap <leader>ff <cmd>Telescope find_files<cr>
+-- nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+-- nnoremap <leader>fb <cmd>Telescope buffers<cr>
+-- nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+-- vim.api.nvim_set_keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", {noremap=false})
+-- vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", {noremap=false})
+-- vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", {noremap=false})
+-- vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').live_grep()<cr>", {noremap=false})
+
+-- Format file on save
+-- :NvimTreeRefresh
