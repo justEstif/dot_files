@@ -36,10 +36,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git vi-mode)
+plugins=( git vi-mode npm zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
+. ~/z.sh
 alias tree="tree -I 'node_modules|cache|test_*'"
 alias hidden='ls -d .*'
 clipboard(){
@@ -81,3 +82,4 @@ export PATH="$HOME/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=/usr/bin/env:$PATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+alias luamake=/home/estifanos/lua-language-server/3rd/luamake/luamake

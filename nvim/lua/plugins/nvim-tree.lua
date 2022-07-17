@@ -172,8 +172,7 @@ nvim_tree.setup {
     }
 }
 
-
--- reference
+-- key maps: reference
 	-- { key = "<C-v>",  cb = tree_cb("vsplit") },
   -- { key = "<C-x>",  cb = tree_cb("split") },
   -- { key = "<C-t>",  cb = tree_cb("tabnew") },

@@ -18,10 +18,10 @@ vim.g.mapleader = ','
 -----------------------------------------------------------
 
 -- Disable arrow keys
--- Using left arrow for switching buffers
 map('', '<up>', '<nop>')
 map('', '<down>', '<nop>')
 map('', '<right>', '<nop>')
+map('', '<left>', '<nop>')
 
 map('n', 'H', '_')                              -- H to go the start of line(n)
 map('v', 'H', '_')                              -- H to go the start of line(v)

@@ -28,83 +28,60 @@ end
 -- Install plugins
 return packer.startup(function(use)
 
-    -- Packer
-    use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim' -- packer
+    use 'neovim/nvim-lspconfig' -- LSP
+    use 'kyazdani42/nvim-tree.lua' -- file explorer
+    use 'preservim/tagbar' -- Tag viewer
+    use 'nvim-treesitter/nvim-treesitter' -- Treesitter Interface
+    use 'wakatime/vim-wakatime' -- Wakatime
 
-    -- File explorer
-    use 'kyazdani42/nvim-tree.lua'
+    use 'lukas-reineke/indent-blankline.nvim' -- indent line
+    use 'kyazdani42/nvim-web-devicons' -- Icons
+    use 'navarasu/onedark.nvim' -- colorschemes: onedark
+    use 'tanvirtin/monokai.nvim' -- colorschemes: monokai
+    use { -- colorschemes: rose-pine
+        'rose-pine/neovim',
+        as = 'rose-pine'
+    }
+    use { -- statusline
+    'feline-nvim/feline.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+    }
 
-    -- Indent line
-    use 'lukas-reineke/indent-blankline.nvim'
+    use { -- git labels
+    'lewis6991/gitsigns.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    config = function()
+      require('gitsigns').setup()
+    end
+    }
 
-    -- Autopair
-    use {
+    use {  -- autopair
         'windwp/nvim-autopairs',
         config = function()
             require('nvim-autopairs').setup()
         end
     }
 
-    -- Icons
-    use 'kyazdani42/nvim-web-devicons'
-
-    -- Tag viewer
-    use 'preservim/tagbar'
-
-    -- Treesitter interface
-    use 'nvim-treesitter/nvim-treesitter'
-
-    -- Color schemes
-    use 'navarasu/onedark.nvim'
-    use 'tanvirtin/monokai.nvim'
-    use {
-        'rose-pine/neovim',
-        as = 'rose-pine'
-    }
-
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-
-    -- Autocomplete
-    use {
+    use {  -- autocomplete
         'hrsh7th/nvim-cmp',
         requires = {'L3MON4D3/LuaSnip', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
                     'saadparwaiz1/cmp_luasnip'}
     }
 
-    -- Statusline
-    use {
-        'feline-nvim/feline.nvim',
-        requires = {'kyazdani42/nvim-web-devicons'}
-    }
-
-    -- git labels
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = {'nvim-lua/plenary.nvim'},
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-
-    -- Dashboard (start screen)
-    use {
+    use { -- dashboard
         'goolord/alpha-nvim',
         requires = {'kyazdani42/nvim-web-devicons'}
     }
 
-    -- My plugins
-
-    -- Comments
-    use {
+    use { -- comment
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
     }
 
-    -- Sneak
-    use {
+    use {  -- sneak
         'phaazon/hop.nvim',
         branch = 'v2',
         config = function()
@@ -112,50 +89,27 @@ return packer.startup(function(use)
         end
     }
 
-    -- Buffer Delete
-    use {
+    use {  -- buffer delete
         'famiu/bufdelete.nvim',
         config = function()
             require('bufdelete').bufdelete(0, true)
         end
     }
 
-    -- Telescope
-    use {
+    use {  -- telescope
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
         requires = {{'nvim-lua/plenary.nvim'}}
     }
 
-    -- wakatime
-    use 'wakatime/vim-wakatime'
-
-    -- surround
-    use({
+    use({  -- surround
         "kylechui/nvim-surround",
         config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
+            require("nvim-surround").setup()
         end
     })
 
-    -- cursorline
-    use {
-        'yamatsum/nvim-cursorline',
-        config = function()
-          require('nvim-cursorline').setup {
-            cursorline = {
-              enable = true,
-              timeout = 0,
-              number = false,
-            },
-            cursorword = {
-              enable = false
-            }
-          }
-        end
-    }
+    -- TODO formatter
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
