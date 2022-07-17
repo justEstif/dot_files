@@ -18,10 +18,12 @@ vim.g.mapleader = ','
 -----------------------------------------------------------
 
 -- Disable arrow keys
-map('', '<up>', '<nop>')
-map('', '<down>', '<nop>')
-map('', '<right>', '<nop>')
-map('', '<left>', '<nop>')
+map('', '<up>', 		'<nop>')
+map('', '<down>', 	'<nop>')
+map('', '<right>', 	'<nop>')
+map('', '<left>', 	'<nop>')
+
+map('i', 'jk', '<Esc>')                         -- map esc to jk
 
 map('n', 'H', '_')                              -- H to go the start of line(n)
 map('v', 'H', '_')                              -- H to go the start of line(v)
@@ -33,46 +35,28 @@ map('n', 'K', '{')                              -- L to jump next blocks(n)
 map('v', 'K', '{')                              -- L to jump next blocks(v)
 
 map("n", '<A-j>', ":m .+1<CR>==")               -- move line up(n)
-map("v", '<A-j>', ":m '>+1<CR>gv=gv")           -- move line up(v)
-map("i", '<A-j>', "<Esc>:m .+1<CR>==gi")        -- move line up(i)
 map("n", '<A-k>', ":m .-2<CR>==")               -- move line down(n)
+map("v", '<A-j>', ":m '>+1<CR>gv=gv")           -- move line up(v)
 map("v", '<A-k>', ":m '<-2<CR>gv=gv")           -- move line down(v)
+map("i", '<A-j>', "<Esc>:m .+1<CR>==gi")        -- move line up(i)
 map("i", '<A-k>', "<Esc>:m .-2<CR>==gi")        -- move line down(i)
-map('n', '<leader>j', 'gJ')                     -- leader j to join lines(n)
-map('v', '<leader>j', 'gJ')                     -- leader j to join lines(v)
+
+map('n', '<C-k>', '<C-w>k')											-- window up
+map('n', '<C-h>', '<C-w>h')    									-- window left
+map('n', '<C-j>', '<C-w>j')											-- window down
+map('n', '<C-l>', '<C-w>l')											-- window right
 
 map('n', '<leader>bn', ':bn<CR>')               -- next buffer(n)
 map('n', '<leader>bp', ':bp<CR>')               -- previous buffer(n)
-map('n', '<leader>bk', ':Bdelete<CR>')          -- kill current buffern
+map('n', '<leader>bk', ':Bdelete<CR>')          -- kill current buffer(n)
 
--- Map Esc to kk
-map('i', 'kk', '<Esc>')
+map('n', '<leader>j', 'gJ')                     -- leader j to join lines(n)
+map('v', '<leader>j', 'gJ')                     -- leader j to join lines(v)
 
--- Clear search highlighting with <leader> and c
-map('n', '<leader>c', ':nohl<CR>')
 
--- Toggle auto-indenting for code paste
-map('n', '<F2>', ':set invpaste paste?<CR>')
-vim.opt.pastetoggle = '<F2>'
-
--- Change split orientation
-map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
-map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
-
--- Move around splits using Ctrl + {h,j,k,l}
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
-
--- Reload configuration without restart nvim
-map('n', '<leader>r', ':so %<CR>')
-
--- Fast saving with <leader> and s
-map('n', '<leader>s', ':w<CR>')
-
--- Close all windows and exit from Neovim with <leader> and q
-map('n', '<leader>q', ':qa!<CR>')
+map('n', '<leader>c', ':nohl<CR>')              -- clear search highlights
+map('n', '<leader>r', ':so %<CR>')							-- Reload configuration without restart nvim
+map('n', '<leader>q', ':qa!<CR>')								-- force exit
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
