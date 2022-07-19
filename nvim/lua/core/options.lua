@@ -28,6 +28,8 @@ opt.smartcase = true        -- Ignore lowercase for the whole pattern
 opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus = 3          -- Set global statusline
+opt.scrolloff = 5           -- Number of lines above and below cursor
+
 wo.cursorline = true        -- Cursorline one
 
 -----------------------------------------------------------

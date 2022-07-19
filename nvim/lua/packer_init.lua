@@ -109,9 +109,8 @@ return packer.startup(function(use)
         end
     })
 
-    -- TODO formatter
+    -- use { 'folke/todo-comments.nvim', config = "require('plugins.todo-comments')" }
 
-    -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
         require('packer').sync()

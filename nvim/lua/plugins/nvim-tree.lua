@@ -175,10 +175,12 @@ nvim_tree.setup {
 -- key maps: reference
 	-- { key = "<C-v>",  cb = tree_cb("vsplit") },
   -- { key = "<C-x>",  cb = tree_cb("split") },
+  -- { key = "R",      cb = tree_cb("refresh") },
+  -- { key = "P",      cb = tree_cb("parent_node") },
+
   -- { key = "<C-t>",  cb = tree_cb("tabnew") },
   -- { key = "<",      cb = tree_cb("prev_sibling") },
   -- { key = ">",      cb = tree_cb("next_sibling") },
-  -- { key = "P",      cb = tree_cb("parent_node") },
   -- { key = "<BS>",   cb = tree_cb("close_node") },
   -- { key = "<S-CR>", cb = tree_cb("close_node") },
   -- { key = "<Tab>",  cb = tree_cb("preview") },
@@ -186,7 +188,6 @@ nvim_tree.setup {
   -- { key = "J",      cb = tree_cb("last_sibling") },
   -- { key = "I",      cb = tree_cb("toggle_ignored") },
   -- { key = "H",      cb = tree_cb("toggle_dotfiles") },
-  -- { key = "R",      cb = tree_cb("refresh") },
   -- { key = "a",      cb = tree_cb("create") },
   -- { key = "d",      cb = tree_cb("remove") },
   -- { key = "r",      cb = tree_cb("rename") },

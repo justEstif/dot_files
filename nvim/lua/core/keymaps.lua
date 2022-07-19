@@ -80,25 +80,14 @@ map("n", "<C-p>b", "<cmd>lua require('telescope.builtin').buffers()<cr>", {norem
 map("n", "<C-p>h", "<cmd>lua require('telescope.builtin').help_tags()<cr>", {noremap=false})    -- search docs of current lang(n)
 
 -- Hop
-vim.api.nvim_set_keymap("", "mbw", "<cmd>HopWordBC<CR>", {noremap=true})
-vim.api.nvim_set_keymap("", "mfw", "<cmd>HopWordAC<CR>", {noremap=true})
-vim.api.nvim_set_keymap("", "mfl", "<cmd>HopLineAC<CR>", {noremap=true})
-vim.api.nvim_set_keymap("", "mbl", "<cmd>HopLineBC<CR>", {noremap=true})
+map("", "mbw", "<cmd>HopWordBC<CR>", {noremap=true})
+map("", "mfw", "<cmd>HopWordAC<CR>", {noremap=true})
+map("", "mfl", "<cmd>HopLineAC<CR>", {noremap=true})
+map("", "mbl", "<cmd>HopLineBC<CR>", {noremap=true})
 
-vim.api.nvim_set_keymap("", "mfw", "<cmd>HopWordAC<CR>", {noremap=true})
-vim.api.nvim_set_keymap("", "mbw", "<cmd>HopWordBC<CR>", {noremap=true})
-vim.api.nvim_set_keymap("", "mfl", "<cmd>HopLineAC<CR>", {noremap=true})
-vim.api.nvim_set_keymap("", "mbl", "<cmd>HopLineBC<CR>", {noremap=true})
+map("", "s", "<cmd>HopChar2AC<CR>", {noremap=false})
+map("", "S", "<cmd>HopChar2BC<CR>", {noremap=false})
 
-vim.api.nvim_set_keymap("", "s", "<cmd>HopChar2AC<CR>", {noremap=false})
-vim.api.nvim_set_keymap("", "S", "<cmd>HopChar2BC<CR>", {noremap=false})
-
-vim.api.nvim_set_keymap("", "s", "<cmd>HopChar2AC<CR>", {noremap=false})
-vim.api.nvim_set_keymap("", "S", "<cmd>HopChar2BC<CR>", {noremap=false})
-
-vim.api.nvim_set_keymap("", "f", "<cmd>HopChar1CurrentLineAC<CR>", {noremap=false})
-vim.api.nvim_set_keymap("", "F", "<cmd>HopChar1CurrentLineBC<CR>", {noremap=false})
-
-vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
-vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
+map("", "f", "<cmd>HopChar1CurrentLineAC<CR>", {noremap=false})
+map("", "F", "<cmd>HopChar1CurrentLineBC<CR>", {noremap=false})
 
