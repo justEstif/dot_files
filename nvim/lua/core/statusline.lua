@@ -102,30 +102,6 @@ local comps = {
       },
       righ_sep = ' ',
     },
-    -- Operating system
-    os = {
-      provider = function()
-        local os = vim.bo.fileformat:lower()
-        local icon
-        if os == 'unix' then
-          icon = '  '
-        elseif os == 'mac' then
-          icon = '  '
-        else
-          icon = '  '
-        end
-        return icon .. os
-      end,
-      hl = { fg = colors.fg },
-      left_sep = {
-        str = ' ' .. separator,
-        hl = { fg = colors.fg },
-      },
-      right_sep = {
-        str = ' ' .. separator,
-        hl = { fg = colors.fg },
-      },
-    },
     -- Line-column
     position = {
       provider = { name = 'position' },
@@ -247,9 +223,7 @@ table.insert(components.active[2], comps.diagnos.hint)
 table.insert(components.active[2], comps.diagnos.info)
 table.insert(components.active[2], comps.lsp.name)
 table.insert(components.active[2], comps.file.type)
-table.insert(components.active[2], comps.file.os)
 table.insert(components.active[2], comps.file.position)
-table.insert(components.active[2], comps.file.line_percentage)
 
 -- Call feline
 feline.setup {
