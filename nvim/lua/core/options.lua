@@ -29,8 +29,8 @@ opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus = 3          -- Set global statusline
 opt.scrolloff = 5           -- Number of lines above and below cursor
-
 wo.cursorline = true        -- Cursorline one
+opt.signcolumn = "yes:2"    -- Add extra sign column next to line number
 
 -----------------------------------------------------------
 -- Tabs, indent
@@ -80,4 +80,3 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
-
