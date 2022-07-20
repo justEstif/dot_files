@@ -74,6 +74,7 @@ export PATH=/usr/bin/env:$PATH
 #
 # Example aliases
 alias zshconf="nvim ~/.zshrc"
+alias vim="nvim ."
 alias bashconfig="nvim ~/.bashrc"
 alias nvimconf="nvim ~/.config/nvim/ ."
 alias fontins="fc-cache -v -f"
