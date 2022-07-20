@@ -1,12 +1,13 @@
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
 local previewers = require("telescope.previewers")
-local Job = require("plenary.job")
+local job = require("plenary.job")
+local telescope = require("telescope")
 
 -- don't preview binaries
 local new_maker = function(filepath, bufnr, opts)
   filepath = vim.fn.expand(filepath)
-  Job:new({
+  job:new({
     command = "file",
     args = { "--mime-type", "-b", filepath },
     on_exit = function(j)
@@ -23,22 +24,22 @@ local new_maker = function(filepath, bufnr, opts)
   }):sync()
 end
 
-require("telescope").setup{
+telescope.setup {
   defaults = {
     buffer_previewer_maker = new_maker,
     mappings = {
       i = {
-        ["<esc>"] = actions.close,  -- close with esc
-        ["<C-u>"] = false,          -- clear input with C-u
+        ["<esc>"] = actions.close, -- close with esc
+        ["<C-u>"] = false, -- clear input with C-u
         ["<C-w>"] = action_layout.toggle_preview -- toggle preview
       },
       n = {
-        ["<C-w>"] = action_layout.toggle_preview  -- toggle preview
+        ["<C-w>"] = action_layout.toggle_preview -- toggle preview
       }
     },
-    file_ignore_patterns = {  -- ignore these files
-        "node_modules/.*",
-        ".git/.*"
+    file_ignore_patterns = { -- ignore these files
+      "node_modules/.*",
+      ".git/.*"
     }
   }
 }
