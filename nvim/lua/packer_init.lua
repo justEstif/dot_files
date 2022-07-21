@@ -31,7 +31,6 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer
   use 'neovim/nvim-lspconfig' -- LSP
   use 'kyazdani42/nvim-tree.lua' -- file explorer
-  use 'preservim/tagbar' -- Tag viewer
   use 'nvim-treesitter/nvim-treesitter' -- Treesitter Interface
   use 'wakatime/vim-wakatime' -- Wakatime
 
@@ -78,7 +77,9 @@ return packer.startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2',
     config = function()
-      require('hop').setup()
+      require('hop').setup({
+        multi_windows = true,
+      })
     end
   }
 
@@ -109,15 +110,11 @@ return packer.startup(function(use)
     end
   }
 
-  use { -- todo comments
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
+  use { "rafamadriz/friendly-snippets", -- snippets
     config = function()
-      require("todo-comments").setup({})
+      require("luasnip.loaders.from_vscode").lazy_load()
     end
   }
-
-  use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- Put this at the end after all plugins
   if packer_bootstrap then

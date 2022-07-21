@@ -13,7 +13,7 @@ end
 nvim_treesitter.setup {
   ensure_installed = {
     'css', 'html', 'javascript', 'json', 'lua', 'python',
-    'typescript', 'vim'
+    'typescript', 'vim', "comment"
   },
   sync_install = false,
   highlight = {

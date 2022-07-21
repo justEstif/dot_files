@@ -20,8 +20,8 @@ vim.g.mapleader = ','
 -- Disable arrow keys
 map('', '<up>', '<nop>')
 map('', '<down>', '<nop>')
-map('', '<right>', '<nop>')
 map('', '<left>', '<nop>')
+map('', '<right>', '<nop>')
 
 map('i', 'jk', '<Esc>') -- map esc to jk
 
@@ -60,6 +60,7 @@ map('n', '<leader>tk', ':tabclose<CR>') -- kill current tab
 map('n', '<leader>j', 'gJ') -- leader j to join lines(n)
 map('v', '<leader>j', 'gJ') -- leader j to join lines(v)
 
+map('n', '<leader>s', ':w<CR>') -- save file
 map('n', '<leader>c', ':nohl<CR>') -- clear search highlights
 map('n', '<leader>r', ':so %<CR>') -- Reload configuration without restart nvim
 map('n', '<leader>q', ':qa!<CR>') -- force exit
@@ -77,23 +78,26 @@ map('t', '<Esc>', '<C-\\><C-n>') -- exit
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
-map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
-
--- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
 
 -- Telescope
-map("n", "<C-p>f", "<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = false }) -- search files(n)
-map("n", "<C-p>g", "<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = false }) -- search within files(n)
-map("n", "<C-p>b", "<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = false }) -- search current buffer(n)
-map("n", "<C-p>h", "<cmd>lua require('telescope.builtin').help_tags()<cr>", { noremap = false }) -- search docs of current lang(n)
-map("n", "<C-p>d", ":Telescope file_browser<CR>", { noremap = true }) -- telescope file browser
+map("n", "<C-p>b", ":Telescope buffers<CR>", { noremap = false }) -- open buffers
+map("n", "<C-p>f", ":Telescope find_files<CR>", { noremap = false }) -- find file
+map("n", "<C-p>g", ":Telescope live_grep<CR>", { noremap = false }) -- find in files
+map("n", "<C-p>s", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = false }) -- find in current file
+map('n', '<C-p>z', ':Telescope treesitter<CR>') -- tags in current file
 
 -- Hop
-map("", "mw", "<cmd>HopWord<CR>", { noremap = true })
-map("", "ml", "<cmd>HopLineStart<CR>", { noremap = true })
-map("", "ms", "<cmd>HopPattern<CR>", { noremap = true })
-map("", "ma", "<cmd>HopAnywhere<CR>", { noremap = true })
-map("", "f", "<cmd>HopChar1CurrentLine<CR>", { noremap = false })
-map('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection, current_line_only = true, hint_offset = -1 })<cr>", {})
-map("", "s", "<cmd>HopChar2<CR>", { noremap = false })
+map("n", "mw", "<cmd>HopWord<CR>")
+map("n", "ml", "<cmd>HopLineStart<CR>")
+map("n", "ms", "<cmd>HopPattern<CR>")
+map("n", "s", "<cmd>HopChar2<CR>")
+map("n", "f", "<cmd>HopChar1CurrentLine<CR>")
+
+--- lsp in
+-- 'gd',         : Definition
+-- '<space>h',   : hover
+-- '<space>D',   : type definition
+-- '<space>rn',  : rename
+-- '<space>ca',  : code action
+-- '<space>e',   : show linediagnostics
+-- '<space>f',   : format
