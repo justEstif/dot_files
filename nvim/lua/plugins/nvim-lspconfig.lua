@@ -148,10 +148,26 @@ lspconfig['tailwindcss'].setup {
           "tw=\"([^\"]*)",
           "tw={\"([^\"}]*)",
           "tw\\.\\w+`([^`]*)",
-          "tw\\(.*?\\)`([^`]*)"
+          "tw\\(.*?\\)`([^`]*)",
+          "class=\"([^\"]*)",
         }
       },
       validate = true
     }
   }
 }
+
+-- Emmet
+lspconfig.emmet_ls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css' },
+  init_options = {
+    html = {
+      options = {
+        ["bem.enabled"] = true,
+      },
+    },
+  }
+})
