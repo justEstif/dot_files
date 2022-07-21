@@ -29,7 +29,6 @@ telescope.setup {
     buffer_previewer_maker = new_maker,
     mappings = {
       i = {
-        ["<esc>"] = actions.close, -- close with esc
         ["<C-u>"] = false, -- clear input with C-u
         ["<C-w>"] = action_layout.toggle_preview -- toggle preview
       },
@@ -43,6 +42,8 @@ telescope.setup {
     }
   }
 }
+
+telescope.load_extension "file_browser"
 
 
 -- keybindings reference

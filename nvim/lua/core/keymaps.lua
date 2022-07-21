@@ -33,6 +33,8 @@ map('n', 'J', '}') -- J to jump previous blocks(n)
 map('v', 'J', '}') -- J to jump previous blocks(v)
 map('n', 'K', '{') -- L to jump next blocks(n)
 map('v', 'K', '{') -- L to jump next blocks(v)
+map("n", '"', '%') -- ' to jump to matching closer
+map("v", '"', '%') -- ' to jump to matching bracket
 
 map("n", '<A-j>', ":m .+1<CR>==") -- move line up(n)
 map("n", '<A-k>', ":m .-2<CR>==") -- move line down(n)
@@ -85,11 +87,13 @@ map("n", "<C-p>f", "<cmd>lua require('telescope.builtin').find_files()<cr>", { n
 map("n", "<C-p>g", "<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = false }) -- search within files(n)
 map("n", "<C-p>b", "<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = false }) -- search current buffer(n)
 map("n", "<C-p>h", "<cmd>lua require('telescope.builtin').help_tags()<cr>", { noremap = false }) -- search docs of current lang(n)
+map("n", "<C-p>d", ":Telescope file_browser<CR>", { noremap = true }) -- telescope file browser
 
 -- Hop
 map("", "mw", "<cmd>HopWord<CR>", { noremap = true })
 map("", "ml", "<cmd>HopLineStart<CR>", { noremap = true })
 map("", "ms", "<cmd>HopPattern<CR>", { noremap = true })
 map("", "ma", "<cmd>HopAnywhere<CR>", { noremap = true })
-map("", "f", "<cmd>HopChar1<CR>", { noremap = false })
+map("", "f", "<cmd>HopChar1CurrentLine<CR>", { noremap = false })
+map('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection, current_line_only = true, hint_offset = -1 })<cr>", {})
 map("", "s", "<cmd>HopChar2<CR>", { noremap = false })
