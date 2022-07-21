@@ -117,6 +117,8 @@ return packer.startup(function(use)
     end
   }
 
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+
   -- Put this at the end after all plugins
   if packer_bootstrap then
     require('packer').sync()
