@@ -36,7 +36,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git vi-mode npm )
+plugins=( git)
+plugins+=(vi-mode)
+plugins+=(npm)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -58,6 +60,11 @@ else
     echo "Remember to install xclip"
 fi
 }
+
+# open tmux by default
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=/usr/bin:$PATH
 export PATH=/usr/bin/env:$PATH
