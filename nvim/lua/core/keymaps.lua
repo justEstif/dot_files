@@ -83,15 +83,13 @@ map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
 map("n", "<C-p>b", ":Telescope buffers<CR>", { noremap = false }) -- open buffers
 map("n", "<C-p>f", ":Telescope find_files<CR>", { noremap = false }) -- find file
 map("n", "<C-p>g", ":Telescope live_grep<CR>", { noremap = false }) -- find in files
-map("n", "<C-p>s", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = false }) -- find in current file
+map("n", "ms", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = false }) -- find in current file
 map('n', '<C-p>z', ':Telescope treesitter<CR>') -- tags in current file
 
 -- Hop
 map("n", "mw", "<cmd>HopWord<CR>")
 map("n", "ml", "<cmd>HopLineStart<CR>")
-map("n", "ms", "<cmd>HopPattern<CR>")
 map("n", "s", "<cmd>HopChar2<CR>")
-map("n", "f", "<cmd>HopChar1CurrentLine<CR>")
 
 --- lsp in
 -- 'gd',         : Definition

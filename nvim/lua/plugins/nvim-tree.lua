@@ -40,8 +40,6 @@ nvim_tree.setup {
             custom_only = false,
             list = {
                 -- user mappings go here
-                -- { key = "<C-v>",  cb = tree_cb("vsplit") },
-                -- { key = "<C-x>",  cb = tree_cb("split") },
             }
         }
     },

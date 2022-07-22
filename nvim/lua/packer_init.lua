@@ -38,10 +38,12 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons' -- Icons
   use 'navarasu/onedark.nvim' -- colorschemes: onedark
   use 'tanvirtin/monokai.nvim' -- colorschemes: monokai
+
   use { -- colorschemes: rose-pine
     'rose-pine/neovim',
     as = 'rose-pine'
   }
+
   use { -- statusline
     'feline-nvim/feline.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' }
@@ -110,11 +112,16 @@ return packer.startup(function(use)
     end
   }
 
-  use { "rafamadriz/friendly-snippets", -- snippets
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  use { -- snippets
+    "rafamadriz/friendly-snippets",
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load()
     end
   }
+
+  -- use "jose-elias-alvarez/null-ls.nvim"
 
   -- Put this at the end after all plugins
   if packer_bootstrap then

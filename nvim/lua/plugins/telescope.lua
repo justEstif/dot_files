@@ -30,10 +30,15 @@ telescope.setup {
     mappings = {
       i = {
         ["<C-u>"] = false, -- clear input with C-u
-        ["<C-w>"] = action_layout.toggle_preview -- toggle preview
+        ["<C-w>"] = action_layout.toggle_preview, -- toggle preview
+
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
       },
       n = {
-        ["<C-w>"] = action_layout.toggle_preview -- toggle preview
+        ["<esc>"] = actions.close,
+        ["<C-w>"] = action_layout.toggle_preview, -- toggle preview
+        ["?"] = actions.which_key,
       }
     },
     file_ignore_patterns = { -- ignore these files
