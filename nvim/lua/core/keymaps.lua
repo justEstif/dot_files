@@ -43,15 +43,19 @@ map("v", '<A-k>', ":m '<-2<CR>gv=gv") -- move line down(v)
 map("i", '<A-j>', "<Esc>:m .+1<CR>==gi") -- move line up(i)
 map("i", '<A-k>', "<Esc>:m .-2<CR>==gi") -- move line down(i)
 
+-- Window
 map('n', '<C-k>', '<C-w>k') -- window up
 map('n', '<C-h>', '<C-w>h') -- window left
 map('n', '<C-j>', '<C-w>j') -- window down
 map('n', '<C-l>', '<C-w>l') -- window right
 
+-- Buffers
 map('n', '<leader>bn', ':bn<CR>') -- next buffer(n)
 map('n', '<leader>bp', ':bp<CR>') -- previous buffer(n)
 map('n', '<leader>bk', ':Bdelete<CR>') -- kill current buffer(n)
+map('n', '<leader>bl', ':Telescope buffers<CR>') -- list all buffers
 
+-- Tabs
 map('n', '<leader>tt', ':tabedit<CR>') -- open buffer in new tab
 map('n', '<leader>tn', ':tabnext<CR>') -- go to next tab
 map('n', '<leader>tp', ':tabprev<CR>') -- go to prev tab
@@ -80,16 +84,15 @@ map('t', '<Esc>', '<C-\\><C-n>') -- exit
 map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
 
 -- Telescope
-map("n", "<C-p>b", ":Telescope buffers<CR>", { noremap = false }) -- open buffers
-map("n", "<C-p>f", ":Telescope find_files<CR>", { noremap = false }) -- find file
-map("n", "<C-p>g", ":Telescope live_grep<CR>", { noremap = false }) -- find in files
-map("n", "ms", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = false }) -- find in current file
-map('n', '<C-p>z', ':Telescope treesitter<CR>') -- tags in current file
+map('n', '<leader>bl', ':Telescope buffers<CR>') -- list all buffers
+map("n", "<C-p>", ":Telescope find_files<CR>", { noremap = true }) -- find file
+map("n", "ms", ":Telescope current_buffer_fuzzy_find<CR>") -- find text in current file
+map("n", "mS", ":Telescope live_grep<CR>") -- find text in directory
+-- '<leader>bl':  list all buffers; defined in the buffers section
 
 -- Hop
-map("n", "mw", "<cmd>HopWord<CR>")
+map("n", "s", "<cmd>HopPattern<CR>")
 map("n", "ml", "<cmd>HopLineStart<CR>")
-map("n", "s", "<cmd>HopChar2<CR>")
 
 --- lsp in
 -- 'gd',         : Definition

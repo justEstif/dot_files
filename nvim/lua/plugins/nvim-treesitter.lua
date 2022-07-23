@@ -21,3 +21,5 @@ nvim_treesitter.setup {
   },
   auto_install = true, -- auto install when missing parsers
 }
+
+-- comment parser is for TODO highlighting

@@ -70,6 +70,13 @@ return packer.startup(function(use)
       'saadparwaiz1/cmp_luasnip' }
   }
 
+  use { -- snippets
+    "rafamadriz/friendly-snippets",
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+    end
+  }
+
   use { -- dashboard
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' }
@@ -79,9 +86,7 @@ return packer.startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2',
     config = function()
-      require('hop').setup({
-        multi_windows = true,
-      })
+      require('hop').setup({})
     end
   }
 
@@ -95,7 +100,7 @@ return packer.startup(function(use)
   use { -- telescope
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { 'nvim-lua/plenary.nvim' }
   }
 
   use({ -- surround
@@ -112,16 +117,8 @@ return packer.startup(function(use)
     end
   }
 
+  -- comment support
   use "JoosepAlviste/nvim-ts-context-commentstring"
-
-  use { -- snippets
-    "rafamadriz/friendly-snippets",
-    config = function()
-      require("luasnip.loaders.from_vscode").lazy_load()
-    end
-  }
-
-  -- use "jose-elias-alvarez/null-ls.nvim"
 
   -- Put this at the end after all plugins
   if packer_bootstrap then

@@ -15,7 +15,6 @@ local new_maker = function(filepath, bufnr, opts)
       if mime_type == "text" then
         previewers.buffer_previewer_maker(filepath, bufnr, opts)
       else
-        -- maybe we want to write something to the buffer here
         vim.schedule(function()
           vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
         end)
@@ -30,26 +29,42 @@ telescope.setup {
     mappings = {
       i = {
         ["<C-u>"] = false, -- clear input with C-u
+        ["<C-p>"] = actions.close, -- exit
         ["<C-w>"] = action_layout.toggle_preview, -- toggle preview
-
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next, -- next item
+        ["<C-k>"] = actions.move_selection_previous, -- previous item
+        ["<C-?>"] = actions.which_key, -- available keys
       },
       n = {
-        ["<esc>"] = actions.close,
         ["<C-w>"] = action_layout.toggle_preview, -- toggle preview
-        ["?"] = actions.which_key,
+        ["<C-?>"] = actions.which_key,
       }
     },
     file_ignore_patterns = { -- ignore these files
       "node_modules/.*",
       ".git/.*"
     }
-  }
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+      previewer = false,
+      hidden = true
+    },
+    buffers = {
+      theme = "dropdown",
+    },
+    current_buffer_fuzzy_find = {
+      theme = "dropdown",
+    },
+    live_grep = {
+      -- theme = "dropdown",
+    },
+  },
 }
 
 
 -- keybindings reference
--- esc -> exit
+-- Ctrl-c -> exit
 -- Ctrl - u -> clear input
 -- Ctrl -w -> toggle preview

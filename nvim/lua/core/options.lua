@@ -19,8 +19,7 @@ opt.completeopt = 'menuone,noinsert,noselect' -- Autocomplete options
 -----------------------------------------------------------
 opt.number = false -- Show line number
 opt.showmatch = true -- Highlight matching parenthesis
-opt.foldmethod = 'marker' -- Enable folding (default 'foldmarker')
-opt.colorcolumn = '' -- Line lenght marker at 80 columns
+opt.colorcolumn = '' -- Line length marker at 80 columns
 opt.splitright = true -- Vertical split to the right
 opt.splitbelow = true -- Horizontal split to the bottom
 opt.ignorecase = true -- Ignore case letters when search
@@ -31,6 +30,8 @@ opt.laststatus = 3 -- Set global statusline
 opt.scrolloff = 5 -- Number of lines above and below cursor
 wo.cursorline = true -- Cursorline one
 opt.signcolumn = "yes:1" -- Add extra sign column next to line number
+
+-- opt.foldmethod = 'manual' -- Enable folding (default 'foldmarker')
 
 -----------------------------------------------------------
 -- Tabs, indent
