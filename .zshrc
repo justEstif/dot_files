@@ -6,10 +6,14 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 COMPLETION_WAITING_DOTS="true"
+ENABLE_CORRECTION="true"
 
 plugins=( git)
-plugins+=(vi-mode)
+# plugins+=(vi-mode)
 plugins+=(npm)
+plugins+=(zsh-vi-mode)
+plugins+=(colored-man-pages)
+plugins+=(fd)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
